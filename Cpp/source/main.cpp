@@ -9,6 +9,8 @@ int main()
 
     cout << DrwEng << endl;
 
+    DrwEng.show();
+
     cout << "Testrun" << endl;
     return 0;
 }
