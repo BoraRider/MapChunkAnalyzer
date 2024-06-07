@@ -1,27 +1,22 @@
-#ifndef DRAWINGENGINE_HH
-#define DRAWINGENGINE_HH
+#pragma once
 
 #include <iostream>
+// #include <cstdint>
+#include <stdint.h>
 #define BUFFER_SIZE 20
 struct Pixel
 {
-    int x;
-    int y;
-    char val;
+    uint8_t R;
+    uint8_t G;
+    uint8_t B;
 };
 class DrawingEngine
 {
-private:
+protected:
     Pixel FrameBuffer[BUFFER_SIZE][BUFFER_SIZE];
 public:
     DrawingEngine();
     ~DrawingEngine();
 
-    void show();
+    virtual void show() const= 0;
 };
-
-std::ostream & operator<<(std::ostream& os, const DrawingEngine& buffer);
-
-
-
-#endif

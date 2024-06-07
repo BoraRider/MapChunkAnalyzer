@@ -1,13 +1,11 @@
 #include <iostream>
-#include "DrawingEngine/DrawingEngine.hpp"
+#include "DrawingEngine/DrawingEngineTerminal.hpp"
 
 using namespace std;
 
 int main()
 {
-    DrawingEngine DrwEng;
-
-    cout << DrwEng << endl;
+    DrawingEngineTerminal DrwEng;
 
     DrwEng.show();
 
