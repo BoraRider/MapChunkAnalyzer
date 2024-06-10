@@ -14,3 +14,9 @@ public:
 
     void show() const override;
 };
+
+std::ostream& operator<<(std::ostream& os, const Pixel& obj)
+{
+    os << obj.R << "," << obj.G << "," << obj.B;
+    return os;
+}

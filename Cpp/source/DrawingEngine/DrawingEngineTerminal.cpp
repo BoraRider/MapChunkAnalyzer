@@ -6,11 +6,12 @@ DrawingEngineTerminal::DrawingEngineTerminal(int buf_s) : DrawingEngine(buf_s)
 
 void DrawingEngineTerminal::show() const
 {
-    for(int i = 0; i < buffer_size; i++)
+    for(int y = 0; y < FrameBufferSize; y++)
     {
-        for(int j=0; j<buffer_size; j++)
+        for(int x=0; x<FrameBufferSize; x++)
         {
-            std::cout << " " << static_cast<int>(FrameBuffer[i][j].R);
+            Pixel px = FrameBuff.get_pixel(x, y);
+            std::cout << " " << px;
         }
         std::cout << "\n";
     }
