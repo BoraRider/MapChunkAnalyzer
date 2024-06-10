@@ -9,8 +9,8 @@ class DrawingEngineTerminal : public DrawingEngine
 private:
     
 public:
-    DrawingEngineTerminal();
-    ~DrawingEngineTerminal();
+    DrawingEngineTerminal(int buf_s);
+    ~DrawingEngineTerminal() = default;
 
     void show() const override;
 };
