@@ -2,7 +2,7 @@
 #include <bits/stdc++.h> 
 #include <stdexcept>
 
-void FrameBuffer::set_size(int buf_size)
+FrameBuffer::FrameBuffer(int buf_size)
 {
     std::vector<Pixel> tmpPx;
     

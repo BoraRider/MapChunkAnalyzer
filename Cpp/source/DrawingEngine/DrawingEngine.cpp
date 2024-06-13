@@ -2,9 +2,10 @@
 
 DrawingEngine::DrawingEngine(int buf_size)
 {
-    FrameBuff.set_size(buf_size);
+    FrameBuff = new FrameBuffer(buf_size);
 }
 
 DrawingEngine::~DrawingEngine()
 {
+    delete FrameBuff;
 }

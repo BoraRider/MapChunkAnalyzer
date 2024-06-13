@@ -7,7 +7,7 @@
 class DrawingEngine
 {
 protected:
-    FrameBuffer FrameBuff;
+    FrameBuffer* FrameBuff;
 public:
     DrawingEngine(int buf_size);
     virtual ~DrawingEngine();
