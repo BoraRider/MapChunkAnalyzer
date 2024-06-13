@@ -1,53 +1,40 @@
 #include "FrameBuffer.hpp"
-
-FrameBuffer::FrameBuffer()
-{
-    buffer_size = 0;
-}
-
-FrameBuffer::~FrameBuffer()
-{
-    if(buffer_size > 0)
-    {
-        for(int i=0; i<buffer_size; i++)
-        {
-            delete Pixels[i];
-        }
-    delete[] Pixels;
-    }
-}
+#include <bits/stdc++.h> 
+#include <stdexcept>
 
 void FrameBuffer::set_size(int buf_size)
 {
-    buffer_size = buf_size;
-    Pixels = new Pixel*[buffer_size];
-
-    for(int i=0; i<buffer_size; i++)
+    std::vector<Pixel> tmpPx;
+    
+    // create empty temporary array with size of buf_size
+    for(int i=0; i<buf_size; i++)
     {
-        Pixels[i] = new Pixel[buffer_size];
+        tmpPx.push_back(Pixel{0,0,0});
     }
 
-    for(int i=0; i<buffer_size; i++)
+    // create finall array with size of (buf_size) x (buf_size)
+    for(int i=0; i<buf_size; i++)
     {
-        for(int j=0; j<buffer_size; j++)
-        {
-            Pixels[i][j].R = j;
-            Pixels[i][j].G = 0;
-            Pixels[i][j].B = 0;
-        }
-    }
+        Pixels.push_back(tmpPx);
+    }  
 }
 
-Pixel FrameBuffer::get_pixel(int x, int y)
+Pixel FrameBuffer::get_pixel(int x, int y) const
 {
-    if( (buffer_size > 0) && (x < buffer_size) && (y < buffer_size) )
+    if( (Pixels[0].size() > 0) && (x < Pixels[0].size()) && (y < Pixels[0].size()) )
     {
         return Pixels[y][x];
     }
-    return Pixel{0,0,0};
+    throw std::invalid_argument("\n X, Y coordinate or size of array is invalid! \n");
+
 }
 
 void FrameBuffer::set_pixel(int x, int y, Pixel px)
 {
     Pixels[y][x] = px;
+}
+
+int FrameBuffer::get_size() const
+{
+    return static_cast<int>(Pixels[0].size());
 }

@@ -7,7 +7,6 @@
 class DrawingEngine
 {
 protected:
-    int FrameBufferSize;
     FrameBuffer FrameBuff;
 public:
     DrawingEngine(int buf_size);

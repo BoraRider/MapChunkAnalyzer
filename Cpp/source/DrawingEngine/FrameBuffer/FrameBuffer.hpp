@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdint.h>
+#include <vector>
 struct Pixel
 {
     uint8_t R {};
@@ -10,13 +11,13 @@ struct Pixel
 class FrameBuffer
 {
 private:
-    int buffer_size;
-    Pixel** Pixels;
+    std::vector<std::vector<Pixel>> Pixels;
 public:
     void set_pixel(int x, int y, Pixel px);
     void set_size(int buf_size);
-    Pixel get_pixel(int x, int y);
-    FrameBuffer();
-    ~FrameBuffer();
+    int get_size() const;
+    Pixel get_pixel(int x, int y) const;
+    FrameBuffer() = default;
+    ~FrameBuffer() = default;
 };
 

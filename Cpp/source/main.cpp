@@ -7,8 +7,16 @@ int main()
 {
     DrawingEngineTerminal DrwEng(8);
 
-    DrwEng.show();
+    try
+    {
+        DrwEng.show();
+    }
+    catch (std::invalid_argument& e)
+    {
+        cerr << e.what() << endl;
+        return -1;
+    }
 
-    cout << endl << "Testrun" << endl;
+    cout << endl << "Testrun state: completed" << endl;
     return 0;
 }
