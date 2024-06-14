@@ -6,4 +6,5 @@ add_library(DrawingEngineTerminalLib DrawingEngineTerminal.cpp DrawingEngineTerm
 target_link_libraries(DrawingEngineTerminalLib PUBLIC 
                         DrawingEngineLib
                         FrameBufferLib
+                        DrawableLib
                         )
