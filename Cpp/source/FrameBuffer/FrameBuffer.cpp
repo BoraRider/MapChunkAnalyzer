@@ -38,3 +38,9 @@ int FrameBuffer::get_size() const
 {
     return static_cast<int>(Pixels[0].size());
 }
+
+bool operator==(const Pixel& lhs, const Pixel& rhs)
+{
+    if( (lhs.R == lhs.R) && (lhs.G == lhs.G) && (lhs.B == lhs.B) ) return true;
+    else return false;
+}

@@ -14,5 +14,6 @@ public:
     DrawingEngine(int buf_size);
     virtual ~DrawingEngine();
 
+    virtual void add_drawable_to_framebuffer(Drawable Dw, unsigned int pX, unsigned int pY) = 0;
     virtual void show() const= 0;
 };

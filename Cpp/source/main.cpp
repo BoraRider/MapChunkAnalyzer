@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    DrawingEngineTerminal DrwEng(8);
+    DrawingEngineTerminal DrwEng(20);
 
     try
     {

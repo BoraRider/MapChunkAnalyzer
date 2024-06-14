@@ -19,6 +19,22 @@ void DrawingEngineTerminal::show() const
 
 std::ostream& operator<<(std::ostream& os, const Pixel& obj)
 {
-    os << static_cast<int>(obj.R) << "," << static_cast<int>(obj.G) << "," << static_cast<int>(obj.B);
+    if(obj == Pixel{0,0,0})
+    {
+        os << ". ";
+    }
+    else if(obj == Pixel{127,127,127})
+    {
+        os << "# ";
+    }
+    else
+    {
+        os << static_cast<int>(obj.R) << "," << static_cast<int>(obj.G) << "," << static_cast<int>(obj.B);
+    }
     return os;
+}
+
+void add_drawable_to_framebuffer(Drawable Dw, unsigned int pX, unsigned int pY)
+{
+
 }

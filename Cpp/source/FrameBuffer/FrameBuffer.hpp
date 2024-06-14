@@ -20,3 +20,4 @@ public:
     ~FrameBuffer() = default;
 };
 
+bool operator==(const Pixel& lhs, const Pixel& rhs);
