@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <stdint.h>
-#include "FrameBuffer/FrameBuffer.hpp"
+#include "../FrameBuffer/FrameBuffer.hpp"
 
 class DrawingEngine
 {
