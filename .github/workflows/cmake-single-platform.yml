@@ -24,12 +24,11 @@ jobs:
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cd ${{github.workspace}}/Cpp && cmake -B ${{github.workspace}}/Cpp/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build
       # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      run: cd ${{github.workspace}}/Cpp && cmake --build ${{github.workspace}}/Cpp/build --config ${{env.BUILD_TYPE}}
 
     - name: clang-tidy check
-      run: cd ${{github.workspace}}/build && run-clang-tidy -checks="*,-abseil-*,-altera-*,-android-*,-fuchsia-*,-google-*,-llvm*,-modernize-use-trailing-return-type,-zircon-*,-readability-else-after-return,-readability-static-accessed-through-instance,-readability-avoid-const-params-in-decls,-cppcoreguidelines-non-private-member-variables-in-classes,-misc-non-private-member-variables-in-classes" -header-filter="${{github.workspace}}" 2>&1 | tee -a clang-tidy-result
-
+      run: cd ${{github.workspace}}/Cpp/build && run-clang-tidy -checks="*,-abseil-*,-altera-*,-android-*,-fuchsia-*,-google-*,-llvm*,-modernize-use-trailing-return-type,-zircon-*,-readability-else-after-return,-readability-static-accessed-through-instance,-readability-avoid-const-params-in-decls,-cppcoreguidelines-non-private-member-variables-in-classes,-misc-non-private-member-variables-in-classes" -header-filter="${{github.workspace}}" 2>&1 | tee -a clang-tidy-result
