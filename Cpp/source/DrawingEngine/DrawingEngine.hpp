@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "../FrameBuffer/FrameBuffer.hpp"
 #include "../Drawable/Drawable.hpp"
-
+ 
 class DrawingEngine
 {
 protected:
