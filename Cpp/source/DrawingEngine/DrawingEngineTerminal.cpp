@@ -34,7 +34,7 @@ std::ostream& operator<<(std::ostream& os, const Pixel& obj)
     return os;
 }
 
-void add_drawable_to_framebuffer(Drawable Dw, unsigned int pX, unsigned int pY)
+void DrawingEngineTerminal::add_drawable_to_framebuffer(Drawable Dw, unsigned int pX, unsigned int pY)
 {
 
 }
