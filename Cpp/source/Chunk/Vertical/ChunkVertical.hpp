@@ -10,4 +10,6 @@ private:
 public:
     ChunkVertical();
     ~ChunkVertical();
+
+    Pixel get_pixels() override;
 };

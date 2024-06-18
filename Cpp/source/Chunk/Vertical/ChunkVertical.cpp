@@ -9,3 +9,8 @@ ChunkVertical::ChunkVertical()
         pixel[i][2] = {0,0,0};
     }
 }
+
+ Pixel Drawable::get_pixels()
+ {
+
+ }

@@ -9,11 +9,11 @@ class DrawingEngine
 {
 protected:
     FrameBuffer* FrameBuff;
-    Drawable Draw;
+    Drawable *Draw;
 public:
-    DrawingEngine(int buf_size);
+    DrawingEngine(const int buf_size);
     virtual ~DrawingEngine();
 
-    virtual void add_drawable_to_framebuffer(Drawable Dw, unsigned int pX, unsigned int pY) = 0;
+    virtual void add_drawable_to_framebuffer(Drawable *Dw, const unsigned int pX, const unsigned int pY) = 0;
     virtual void show() const= 0;
 };

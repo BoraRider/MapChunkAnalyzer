@@ -1,6 +1,6 @@
 #include "DrawingEngineTerminal.hpp"
 
-DrawingEngineTerminal::DrawingEngineTerminal(int buf_s) : DrawingEngine(buf_s)
+DrawingEngineTerminal::DrawingEngineTerminal(const int buf_s) : DrawingEngine(buf_s)
 {
 }
 
@@ -34,7 +34,7 @@ std::ostream& operator<<(std::ostream& os, const Pixel& obj)
     return os;
 }
 
-void DrawingEngineTerminal::add_drawable_to_framebuffer(Drawable Dw, unsigned int pX, unsigned int pY)
+void DrawingEngineTerminal::add_drawable_to_framebuffer(Drawable *Dw, const unsigned int pX, const unsigned int pY)
 {
 
 }
