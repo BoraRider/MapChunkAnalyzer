@@ -3,11 +3,6 @@
 DrawingEngineTerminal::DrawingEngineTerminal(const int buf_s) : DrawingEngine(buf_s)
 {
 }
-void showtime()
-{
-
-
-}
 
 void DrawingEngineTerminal::update_framebuffer()
 {
@@ -38,36 +33,37 @@ void DrawingEngineTerminal::update_framebuffer()
 
 
 void DrawingEngineTerminal::show() const
-{
+{   
+    for(int i = 0; i < FrameBuff->get_size()+2; i++)
+    {
+        std::cout << "==";
+    }
+    std::cout << "\n";
     for(int y = 0; y < FrameBuff->get_size(); y++)
     {
+        std::cout << "||";
         for(int x=0; x<FrameBuff->get_size(); x++)
         {
             Pixel px = FrameBuff->get_pixel(x, y);
             std::cout << " " << px;
         }
-        std::cout << "\n";
+        std::cout << "||\n";
     }
+    for(int i = 0; i < FrameBuff->get_size()+2; i++)
+    {
+        std::cout << "==";
+    }
+    std::cout << "\n";
 }
-
+//  Take 0.30Red + 0.59Green + 0.11Blue
 std::ostream& operator<<(std::ostream& os, const Pixel& obj)
 {
-    if(obj == Pixel{0,0,0})
-    {
-        os << ". ";
-    }
-    else if(obj == Pixel{10,10,10})
-    {
-        os << "* ";
-    }
-    else if(obj == Pixel{127,127,127})
-    {
-        os << "# ";
-    }
-    else
-    {
-        os << static_cast<int>(obj.R) << "," << static_cast<int>(obj.G) << "," << static_cast<int>(obj.B);
-    }
+    int gray_color = 0.3*obj.R + 0.59*obj.G + 0.11*obj.B;
+
+    int char_index = gray_color * 69/255;
+    char_index = 69-char_index;
+
+    os << GreyToAscii[char_index];
     return os;
 }
 

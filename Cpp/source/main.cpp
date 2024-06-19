@@ -38,7 +38,7 @@ int main()
         delete Drwbl1;
         return -1;
     }
-std::cout<<std::endl;
+
     Drwbl5->set_position(0,4);
     DrwEng.update_framebuffer();
     DrwEng.show();
