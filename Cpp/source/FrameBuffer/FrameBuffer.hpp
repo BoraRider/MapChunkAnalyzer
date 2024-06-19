@@ -23,7 +23,7 @@ public:
     for(int i=0; i<buf_size; i++) tmpPx.push_back(Pixel{0,0,0});
     for(int i=0; i<buf_size; i++) Pixels.push_back(tmpPx);
     }
-
+    void clean_framebuffer();
     FrameBuffer(int buf_size);
     FrameBuffer(){};
     ~FrameBuffer() = default;

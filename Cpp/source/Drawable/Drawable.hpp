@@ -4,8 +4,8 @@
 
 struct GridPos
 {
-    unsigned int posX;
-    unsigned int posY;
+    int posX;
+    int posY;
 };
 
 class Drawable
@@ -19,7 +19,7 @@ public:
     std::vector<Drawable*> get_drawable();
     virtual FrameBuffer get_pixels() = 0;
     GridPos get_position() {return position;}
-    void set_position(unsigned int x, unsigned int y);
+    void set_position(int x, int y);
 
     Drawable() = default;
     virtual ~Drawable() = default;
