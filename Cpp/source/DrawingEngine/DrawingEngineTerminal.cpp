@@ -23,6 +23,10 @@ std::ostream& operator<<(std::ostream& os, const Pixel& obj)
     {
         os << ". ";
     }
+    else if(obj == Pixel{10,10,10})
+    {
+        os << "* ";
+    }
     else if(obj == Pixel{127,127,127})
     {
         os << "# ";
@@ -34,7 +38,18 @@ std::ostream& operator<<(std::ostream& os, const Pixel& obj)
     return os;
 }
 
-void DrawingEngineTerminal::add_drawable_to_framebuffer(Drawable *Dw, const unsigned int pX, const unsigned int pY)
+void DrawingEngineTerminal::add_drawable_to_framebuffer(std::vector<Drawable*> Dw)
 {
+    FrameBuffer figure = Dw[0]->get_pixels();
+    GridPos position = Dw[0]->get_position();
 
+    std::cout<<figure.get_size()<<std::endl;
+
+    for(int y=0; y < figure.get_size(); y++)
+    {
+        for(int x=0; x < figure.get_size(); x++)
+        {
+            FrameBuff->set_pixel(position.posX + x, position.posY+ y, figure.get_pixel(x, y) );
+        }
+    }
 }

@@ -12,7 +12,7 @@ public:
     DrawingEngineTerminal(const int buf_s);
     ~DrawingEngineTerminal() override = default ;
 
-    void add_drawable_to_framebuffer(Drawable *Dw, const unsigned int pX, const unsigned int pY) override;
+    void add_drawable_to_framebuffer(std::vector<Drawable*> Dw) override;
     void show() const override;
 };
 

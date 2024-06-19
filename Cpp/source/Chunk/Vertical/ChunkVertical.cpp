@@ -2,15 +2,18 @@
 
 ChunkVertical::ChunkVertical()
 {   
+    frame.set_size(CHUNK_SIZE);
     for(int i = 0; i < CHUNK_SIZE; i++)
     {
-        pixel[i][0] = {0,0,0};
-        pixel[i][1] = {127,127,127};
-        pixel[i][2] = {0,0,0};
+        frame.set_pixel(i, 0, Pixel{10,10,10});
+        frame.set_pixel(i, 1, Pixel{127,127,127});
+        frame.set_pixel(i, 2, Pixel{10,10,10});
     }
+    position.posX = 0;
+    position.posY = 0;
 }
 
- Pixel Drawable::get_pixels()
- {
-
- }
+FrameBuffer ChunkVertical::get_pixels()
+{
+    return frame;
+}

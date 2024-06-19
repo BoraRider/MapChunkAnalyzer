@@ -6,10 +6,10 @@
 class ChunkVertical : public Drawable
 {
 private:
-    Pixel pixel[3][3];
+    
 public:
     ChunkVertical();
-    ~ChunkVertical();
+    ~ChunkVertical(){};
 
-    Pixel get_pixels() override;
+    FrameBuffer get_pixels() override;
 };
