@@ -1,6 +1,6 @@
 #include "DrawingEngine.hpp"
 
-DrawingEngine::DrawingEngine(int buf_size)
+DrawingEngine::DrawingEngine(const int buf_size)
 {
     FrameBuff = new FrameBuffer(buf_size);
 }

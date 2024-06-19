@@ -1,6 +1,7 @@
 #include "FrameBuffer.hpp"
 #include <bits/stdc++.h> 
 #include <stdexcept>
+#include <algorithm>
 
 FrameBuffer::FrameBuffer(int buf_size)
 {
@@ -37,4 +38,17 @@ void FrameBuffer::set_pixel(int x, int y, Pixel px)
 int FrameBuffer::get_size() const
 {
     return static_cast<int>(Pixels[0].size());
+}
+
+void FrameBuffer::clean_framebuffer()
+{
+    for(int i=0; i<Pixels[0].size(); i++)
+    {
+        std::fill(Pixels[i].begin(), Pixels[i].end(), Pixel{0,0,0});
+    }
+}
+
+bool operator==(const Pixel& lhs, const Pixel& rhs)
+{
+    return ( (lhs.R == rhs.R) && (lhs.G == rhs.G) && (lhs.B == rhs.B) );
 }
