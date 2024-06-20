@@ -35,9 +35,16 @@ void FrameBuffer::set_pixel(int x, int y, Pixel px)
     Pixels[y][x] = px;
 }
 
-int FrameBuffer::get_size() const
+unsigned int FrameBuffer::get_size() const
 {
     return static_cast<int>(Pixels[0].size());
+}
+
+void FrameBuffer::set_size(int buf_size)
+{
+    std::vector<Pixel> tmpPx;
+    for(int i=0; i<buf_size; i++) tmpPx.push_back(Pixel{0,0,0});
+    for(int i=0; i<buf_size; i++) Pixels.push_back(tmpPx);
 }
 
 void FrameBuffer::clean_framebuffer()

@@ -17,7 +17,7 @@ protected:
 public:
     void add_drawable(Drawable *Drw);
     std::vector<Drawable*> get_drawable();
-    virtual FrameBuffer get_pixels() = 0;
+    virtual FrameBuffer get_pixels() const = 0;
     GridPos get_position() {return position;}
     void set_position(int x, int y);
 

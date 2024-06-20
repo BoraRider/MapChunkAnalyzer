@@ -3,7 +3,7 @@
 #include <iostream>
 #include "DrawingEngine.hpp" 
 
-const char GreyToAscii[] = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'.  ";
+constexpr char GreyToAscii[] = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^`'.  ";
 
 class DrawingEngineTerminal : public DrawingEngine
 {

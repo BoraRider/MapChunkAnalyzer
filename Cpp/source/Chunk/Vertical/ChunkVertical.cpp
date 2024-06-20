@@ -1,5 +1,10 @@
 #include "ChunkVertical.hpp"
 
+namespace
+{
+    constexpr int CHUNK_SIZE = 3;
+}
+
 ChunkVertical::ChunkVertical()
 {   
     frame.set_size(CHUNK_SIZE);
@@ -13,7 +18,7 @@ ChunkVertical::ChunkVertical()
     position.posY = 0;
 }
 
-FrameBuffer ChunkVertical::get_pixels()
+FrameBuffer ChunkVertical::get_pixels() const
 {
     return frame;
 }

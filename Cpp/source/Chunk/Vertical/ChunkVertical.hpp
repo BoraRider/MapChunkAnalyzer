@@ -1,15 +1,13 @@
 #pragma once
 #include "Drawable.hpp"
 
-#define CHUNK_SIZE 3
-
 class ChunkVertical : public Drawable
 {
 private:
     
 public:
     ChunkVertical();
-    ~ChunkVertical(){};
+    ~ChunkVertical() = default;
 
-    FrameBuffer get_pixels() override;
+    FrameBuffer get_pixels() const override;
 };
