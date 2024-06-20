@@ -1,7 +1,8 @@
 #pragma once
 
 #include <iostream>
-#include "DrawingEngine.hpp" 
+#include "DrawingEngine.hpp"
+#include <memory>
 
 constexpr char GreyToAscii[] = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^`'.  ";
 
@@ -13,7 +14,7 @@ public:
     DrawingEngineTerminal(const int buf_s);
     ~DrawingEngineTerminal() override = default ;
 
-    void add_drawable_to_framebuffer(Drawable* Dw) override;
+    void add_drawable_to_framebuffer(std::unique_ptr<Drawable> Dw) override;
     void update_framebuffer();
     void show() const override;
 };
