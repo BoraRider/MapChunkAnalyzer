@@ -2,15 +2,15 @@
 
 #include <iostream>
 #include <stdint.h>
-#include "../FrameBuffer/FrameBuffer.hpp"
-#include "../Drawable/Drawable.hpp"
+#include "FrameBuffer.hpp"
+#include "Drawable.hpp"
 #include <memory>
  
 class DrawingEngine
 {
 protected:
     FrameBuffer* FrameBuff;
-    std::vector<std::shared_ptr<Drawable>> engine_drawables{};
+    std::vector<std::shared_ptr<const Drawable>> engine_drawables{};
 public:
     DrawingEngine(const int buf_size);
     virtual ~DrawingEngine();

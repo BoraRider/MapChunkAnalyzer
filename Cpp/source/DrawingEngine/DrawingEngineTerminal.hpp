@@ -4,8 +4,6 @@
 #include "DrawingEngine.hpp"
 #include <memory>
 
-constexpr char GreyToAscii[] = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^`'.  ";
-
 class DrawingEngineTerminal : public DrawingEngine
 {
 private:

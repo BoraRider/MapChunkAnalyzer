@@ -1,5 +1,7 @@
 #include "DrawingEngineTerminal.hpp"
 
+constexpr char GreyToAscii[] = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^`'.  ";
+
 DrawingEngineTerminal::DrawingEngineTerminal(const int buf_s) : DrawingEngine(buf_s)
 {
 }

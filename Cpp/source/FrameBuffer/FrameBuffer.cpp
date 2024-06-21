@@ -37,7 +37,7 @@ void FrameBuffer::set_pixel(int x, int y, Pixel px)
 
 unsigned int FrameBuffer::get_size() const
 {
-    return static_cast<int>(Pixels[0].size());
+    return Pixels[0].size();
 }
 
 void FrameBuffer::set_size(int buf_size)

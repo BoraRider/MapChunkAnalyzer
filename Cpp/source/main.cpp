@@ -1,7 +1,7 @@
 #include <iostream>
-#include "DrawingEngine/DrawingEngineTerminal.hpp"
-#include "Drawable/Drawable.hpp"
-#include "Chunk/Vertical/ChunkVertical.hpp"
+#include "DrawingEngineTerminal.hpp"
+#include "Drawable.hpp"
+#include "ChunkVertical.hpp"
 #include <memory>
 
 using namespace std;

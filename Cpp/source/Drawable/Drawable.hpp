@@ -1,5 +1,5 @@
 #pragma once
-#include "../FrameBuffer/FrameBuffer.hpp"
+#include "FrameBuffer.hpp"
 #include <vector>
 #include <memory>
 
@@ -14,12 +14,12 @@ class Drawable
 protected:
     GridPos position;
     FrameBuffer frame;
-    std::vector<std::shared_ptr<Drawable>> drawables{};
+    std::vector<std::shared_ptr<const Drawable>> drawables{};
 public:
     void add_drawable(std::shared_ptr<Drawable> Drw);
-    std::vector<std::shared_ptr<Drawable>> get_drawable();
+    const std::vector<std::shared_ptr<const Drawable>> & get_drawable() const;
     virtual FrameBuffer get_pixels() const = 0;
-    GridPos get_position() {return position;}
+    GridPos get_position() const;
     void set_position(int x, int y);
 
     Drawable() = default;
