@@ -67,7 +67,7 @@ std::ostream& operator<<(std::ostream& os, const Pixel& obj)
     return os;
 }
 
-void DrawingEngineTerminal::add_drawable_to_framebuffer(std::unique_ptr<Drawable> Dw)
+void DrawingEngineTerminal::add_drawable_to_framebuffer(std::shared_ptr<Drawable> Dw)
 {
     engine_drawables.push_back(Dw);
 }

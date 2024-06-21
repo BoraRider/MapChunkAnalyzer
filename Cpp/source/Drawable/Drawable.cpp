@@ -1,11 +1,11 @@
 #include "Drawable.hpp"
 
 
-void Drawable::add_drawable(std::unique_ptr<Drawable> Drw)
+void Drawable::add_drawable(std::shared_ptr<Drawable> Drw)
 {
     drawables.push_back(Drw);
 }
-std::vector<std::unique_ptr<Drawable>> Drawable::get_drawable()
+std::vector<std::shared_ptr<Drawable>> Drawable::get_drawable()
 {
     return drawables;
 }

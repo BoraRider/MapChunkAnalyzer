@@ -9,13 +9,13 @@ using namespace std;
 int main()
 {
     DrawingEngineTerminal DrwEng(10);
-    // unique_ptr<Drawable> Drwbl1(new ChunkVertical);
+    // shared_ptr<Drawable> Drwbl1(new ChunkVertical);
 
-    unique_ptr<Drawable> Drwbl[5];
+    shared_ptr<Drawable> Drwbl[5];
 
     for(int i=0; i<5 ;i++)
     {
-        Drwbl[i] = unique_ptr<Drawable>(new ChunkVertical);
+        Drwbl[i] = shared_ptr<Drawable>(new ChunkVertical);
     }
 
     Drwbl[0]->set_position(4,4);
