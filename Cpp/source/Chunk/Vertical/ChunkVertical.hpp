@@ -9,5 +9,5 @@ public:
     ChunkVertical();
     ~ChunkVertical() = default;
 
-    FrameBuffer get_pixels() const override;
+    const FrameBuffer & get_pixels() const override;
 };

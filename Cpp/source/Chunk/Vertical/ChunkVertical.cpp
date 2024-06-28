@@ -18,7 +18,7 @@ ChunkVertical::ChunkVertical()
     position.posY = 0;
 }
 
-FrameBuffer ChunkVertical::get_pixels() const
+const FrameBuffer & ChunkVertical::get_pixels() const
 {
     return frame;
 }

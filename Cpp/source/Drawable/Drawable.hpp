@@ -18,7 +18,7 @@ protected:
 public:
     void add_drawable(std::shared_ptr<Drawable> Drw);
     const std::vector<std::shared_ptr<const Drawable>> & get_drawable() const;
-    virtual FrameBuffer get_pixels() const = 0;
+    virtual const FrameBuffer & get_pixels() const = 0;
     GridPos get_position() const;
     void set_position(int x, int y);
 
