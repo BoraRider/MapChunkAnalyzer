@@ -15,7 +15,7 @@ void Drawable::set_position(int x, int y)
     position.posY = y;
 }
 
-GridPos Drawable::get_position() const 
+const GridPos & Drawable::get_position() const 
 {
     return position;
 }

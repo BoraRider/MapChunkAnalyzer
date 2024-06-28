@@ -9,14 +9,13 @@ DrawingEngineTerminal::DrawingEngineTerminal(const int buf_s) : DrawingEngine(bu
 void DrawingEngineTerminal::update_framebuffer()
 {
     int drawables_left = engine_drawables.size() - 1;
-    GridPos position;
 
     FrameBuff->clean_framebuffer();
 
     while(drawables_left >= 0)
     {
         const FrameBuffer & figure = engine_drawables[drawables_left]->get_pixels();
-        position = engine_drawables[drawables_left]->get_position();
+        const GridPos & position = engine_drawables[drawables_left]->get_position();
 
         for(int y=0; y < figure.get_size(); y++)
         {
