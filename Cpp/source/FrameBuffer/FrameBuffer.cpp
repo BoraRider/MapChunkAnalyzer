@@ -49,9 +49,9 @@ void FrameBuffer::set_size(int buf_size)
 
 void FrameBuffer::clean_framebuffer()
 {
-    for(int i=0; i<Pixels[0].size(); i++)
+    for(auto & pix : Pixels)
     {
-        std::fill(Pixels[i].begin(), Pixels[i].end(), Pixel{0,0,0});
+        std::fill(pix.begin(), pix.end(), Pixel{0,0,0});
     }
 }
 

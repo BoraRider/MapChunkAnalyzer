@@ -1,4 +1,5 @@
 #include "DrawingEngineTerminal.hpp"
+#include <algorithm>
 
 constexpr char GreyToAscii[] = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^`'.  ";
 
@@ -8,14 +9,15 @@ DrawingEngineTerminal::DrawingEngineTerminal(const int buf_s) : DrawingEngine(bu
 
 void DrawingEngineTerminal::update_framebuffer()
 {
-    int drawables_left = engine_drawables.size() - 1;
 
     FrameBuff->clean_framebuffer();
 
-    while(drawables_left >= 0)
+    for(auto & engine_drawable : engine_drawables)
     {
-        const FrameBuffer & figure = engine_drawables[drawables_left]->get_pixels();
-        const GridPos & position = engine_drawables[drawables_left]->get_position();
+        const FrameBuffer & figure = engine_drawable->get_pixels();
+        const GridPos & position = engine_drawable->get_position();
+        // auto it = find(engine_drawables.begin(), engine_drawables.end(), engine_drawable); 
+        // std::cout << it-engine_drawables.begin()  << std::endl;
 
         for(int y=0; y < figure.get_size(); y++)
         {
@@ -27,7 +29,6 @@ void DrawingEngineTerminal::update_framebuffer()
                 }
             }
         }
-        drawables_left--;
     }
 }
 

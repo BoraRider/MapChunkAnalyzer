@@ -1,21 +1,21 @@
 #include <iostream>
+#include <memory>
+
 #include "DrawingEngineTerminal.hpp"
 #include "Drawable.hpp"
 #include "ChunkVertical.hpp"
-#include <memory>
 
 using namespace std;
 
 int main()
 {
     DrawingEngineTerminal DrwEng(10);
-    // shared_ptr<Drawable> Drwbl1(new ChunkVertical);
 
-    shared_ptr<Drawable> Drwbl[5];
+    vector<shared_ptr<Drawable>> Drwbl;
 
     for(int i=0; i<5 ;i++)
     {
-        Drwbl[i] = shared_ptr<Drawable>(new ChunkVertical);
+        Drwbl.push_back(shared_ptr<Drawable>(new ChunkVertical));
     }
 
     Drwbl[0]->set_position(4,4);
@@ -42,7 +42,8 @@ int main()
         return -1;
     }
 
-    Drwbl[4]->set_position(0,4);
+
+    Drwbl[0]->set_position(0,4);
     DrwEng.update_framebuffer();
     DrwEng.show();
 
